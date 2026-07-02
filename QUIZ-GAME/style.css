@@ -69,6 +69,46 @@ body {
 
 .result-info {
   background-color: rgb(249, 240, 230);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.result-info p {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+.result-message {
+  color: #e86a33;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.restart-btn {
+  color: white;
+  background-color: #e86a33;
+}
+
+button {
+  color: white;
+  background-color: #e86a33;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+#start-screen p {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+button:hover {
+  background-color: #d45b28;
+  transform: translateX(5px);
+  transition: all 0.2s ease;
 }
 
 .answer-container {
@@ -119,4 +159,16 @@ body {
   width: 0%;
   background-color: rgba(255, 4, 0, 0.573);
   transition: width 0.3s ease;
+}
+
+/*! Responsive Design */
+
+@media (max-width: 500px) {
+  /* when we hit 500px and below, implement the styles below*/
+  .screen {
+    padding: 1rem;
+  }
+  .start-screen h1 {
+    font-size: 2rem;
+  }
 }
