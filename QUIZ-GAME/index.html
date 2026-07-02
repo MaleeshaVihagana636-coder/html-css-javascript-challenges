@@ -11,15 +11,15 @@
       <div class="screen active" id="start-screen">
         <h1>QUIZ Time!</h1>
         <p>Test your knowledge with these fun questions</p>
-        <button id="start-btn btn">Start Quiz</button>
+        <button id="start-btn">Start Quiz</button>
       </div>
       <div class="screen" id="quiz-screen">
         <div class="quiz-header">
           <h2 id="Question-Text ">Question</h2>
           <div class="quiz-info">
             <p>
-              Question <span id="current-Question"></span> of
-              <span id="numberof-Question">5</span>
+              Question <span id="current-question"></span> of
+              <span id="total-questions">5</span>
             </p>
             <p>Score: <span id="score">0</span></p>
           </div>
@@ -35,13 +35,14 @@
       <div class="screen result-screen">
         <h1>Quiz Result</h1>
         <div class="result-info">
-          
-           <p> You Scored <span id="final-score"></span>Out of
-            <span id="max-score"></span></p>
-            <div id="result-message">Keep studying! You'll get better!</div>
+          <p></p>
+            You Scored <span id="final-score"></span>Out of
+            <span id="max-score"></span>
+          </p>
+          <div id="result-message">Keep studying! You'll get better!</div>
         </div>
-            <button id="restart-btn">Restart Quiz</button> 
-        </div>
+        <button id="restart-btn">Restart Quiz</button>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
