@@ -4,7 +4,7 @@ const quizScreen = document.getElementById("quiz-screen");
 const resultScreen = document.getElementById("result-screen");
 const startButton = document.getElementById("start-btn");
 const questionText = document.getElementById("question-text");
-const answersContainer = document.getElementById("answers-container");
+const answersContainer = document.getElementById("answer-container");
 const currentQuestionSpan = document.getElementById("current-question");
 const totalQuestionsSpan = document.getElementById("total-questions");
 const scoreSpan = document.getElementById("score");
@@ -100,12 +100,12 @@ function showQuestion() {
     // what is dataset? it's a property of the button element that allows you to store custom data
     button.dataset.correct = answer.correct;
 
-    button.addEventListener("click", () => selectAnswer());
+    button.addEventListener("click", (e) => selectAnswer(e));
     answersContainer.appendChild(button);
   });
 }
 
-function selectAnswer() {
+function selectAnswer(event) {
   if (answersDisabled) return;
   const selectedAnswer = event.target;
   const correctAnswer = selectedAnswer.dataset.correct;
