@@ -69,3 +69,10 @@ h1::after {
   transform: translateY(0);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+.palettes-container{
+  display:grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
