@@ -83,6 +83,40 @@ h1::after {
   transition: transform 0.2s;
 }
 
-.color-box:hover{
-  transform:translateY(-5px);
+.color-box:hover {
+  transform: translateY(-5px);
+}
+
+.color {
+  height: 120px;
+  cursor: pointer;
+}
+
+.color-info {
+  background-color: #fff;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.color-code {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.copy-btn {
+  cursor: pointer;
+  color: #333;
+}
+
+.copy-btn:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .palettes-container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
 }
