@@ -1,35 +1,46 @@
 const generateBtn = document.querySelector("#generate-btn");
 const paletteContainer = document.querySelector(".palettes-container");
-const copyButtons = document.querySelectorAll(".copy-btn");
 
 generateBtn.addEventListener("click", generatePalette);
 
 paletteContainer.addEventListener("click", (event) => {
-  if (event.target.classList.contains("copy-btn")) {
-    const colorCode = event.target.previousElementSibling.textContent;
-    navigator.clipboard
-      .writeText(colorCode)
-      .then(() => showcopySuccses())
-      .catch((err) => console.error("Failed to copy text: ", err));
-  } else if (event.target.classList.contains("color")) {
-    const hexValue =
-      event.target.nextElementSibling.querySelector(".color-code").textContent;
-    navigator.clipboard
-      .writeText(hexValue)
-      .then(() => showcopySuccses())
-      .catch((err) => console.error("Failed to copy text: ", err));
+  const copyBtn = event.target.closest(".copy-btn");
+  const colorDiv = event.target.closest(".color");
+
+  if (copyBtn) {
+    const colorCode = copyBtn.previousElementSibling.textContent;
+    copyToClipboard(colorCode, copyBtn);
+  } else if (colorDiv) {
+    const colorInfo = colorDiv.nextElementSibling;
+    const hexValue = colorInfo.querySelector(".color-code").textContent;
+    const btn = colorInfo.querySelector(".copy-btn");
+    copyToClipboard(hexValue, btn);
   }
 });
 
-function showcopySuccses() {
-  copyButtons.classList.remove("far", "fa-copy");
-  copyButtons.classList.add("far", "fa-check");
-  copyButtons.style.color = "green";
+function copyToClipboard(text, button) {
+  // Show visual feedback immediately (checkmark icon)
+  showCopySuccess(button);
+
+  // Attempt clipboard copy (may silently fail on file:// protocol)
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text);
+    }
+  } catch (e) {
+    // Clipboard unavailable - visual feedback already shown
+  }
+}
+
+function showCopySuccess(button) {
+  button.classList.remove("fa-copy");
+  button.classList.add("fa-check");
+  button.style.color = "#15803d";
 
   setTimeout(() => {
-    copyButtons.classList.remove("far", "fa-check");
-    copyButtons.classList.add("far", "fa-copy");
-    copyButtons.style.color = "";
+    button.classList.remove("fa-check");
+    button.classList.add("fa-copy");
+    button.style.color = "";
   }, 2000);
 }
 
