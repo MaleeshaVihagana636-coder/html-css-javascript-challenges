@@ -22,15 +22,14 @@ function generateRandomColor(){
 }
 
 function updatePaletteDisplay(colors){
-    const ColorBox = document.querySelector(".color-box");
-    ColorBox.forEach((colorBox, index) => {
+    const colorBoxes = document.querySelectorAll(".color-box");
+    colorBoxes.forEach((colorBox, index) => {
         const color = colors[index];
-        const colorDiv =  document.querySelector(".color");
-        const colorCode = document.querySelector(".color-code");
+        const colorDiv =  colorBox.querySelector(".color");
+        const colorCode = colorBox.querySelector(".color-code");
         colorDiv.style.backgroundColor = color;
         colorCode.textContent = color;
     })
-    paletteContainer.innerHTML = "";
 }
 
 generatePalette();
