@@ -3,3 +3,30 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+body {
+  font-family: sans-serif;
+  background-color: #f7f9f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+  padding: 1.2rem;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.Board {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
