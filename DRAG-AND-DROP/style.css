@@ -45,17 +45,21 @@ h1 {
 }
 
 .list h2 {
-    color: #555;
-    margin-bottom: 1rem;
-    font-size: 1.6rem;
-
+  color: #555;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
 }
 
-.card{
-    background-color: white;
-    color: #333;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 10px;
-    cursor: grab;
+.card {
+  background-color: white;
+  color: #333;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  cursor: grab;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card:active {
+  cursor: grabbing;
 }
