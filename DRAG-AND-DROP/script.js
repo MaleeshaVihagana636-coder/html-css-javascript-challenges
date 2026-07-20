@@ -31,7 +31,7 @@ function dragEnter(e) {
   this.classList.add("over");
 }
 
-function dragOver(e) {
+function dragLeave(e) {
   this.classList.remove("over");
 }
 
