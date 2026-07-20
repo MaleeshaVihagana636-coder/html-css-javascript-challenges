@@ -12,3 +12,21 @@ for (const list of Lists) {
   list.addEventListener("dragleave", dragLeave);
   list.addEventListener("drop", dragDrop);
 }
+
+function dragStart(e) {
+  //! This Allow us to use the id of the card that we're dragging
+  e.dataTransfer.setData("text/plain", this.id);
+}
+
+function dragEnd() {
+  console.log("Drag Ending");
+}
+
+function dragOver(e) {
+  e.preventDefult();
+}
+
+function dragEnter(e) {
+  e.preventDefult();
+  this.classList.add("over");
+}
